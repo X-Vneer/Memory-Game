@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game || Moneer A. Mizyed</title>
+
+    <!-- normlize css file  -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- main css file  -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- start game  -->
+    <div class="overlay first">
+      <div class="content">
+        <form action="">
+          <h2>Welcome to Memory Game!</h2>
+          <span>YOU READY!</span>
+          <div class="fo player-name">
+            <label for="name">Your Name:</label
+            ><input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="what's Your Name?"
+              maxlength="16"
+            />
+          </div>
+          <div class="fo dif">
+            <label for="dif">Game Mode</label>
+            <select name="dif" id="dif">
+              <option value="easy">Easy</option>
+              <option value="normal" selected>Normal</option>
+              <option value="hard">Hard</option>
+              <option value="impossible">Impossible</option>
+            </select>
+          </div>
+          <div class="fo sound">
+            <input type="checkbox" name="" id="sound" checked />
+            <label for="sound"> Use sound effects</label>
+          </div>
+          <button class="button" role="button">let's Play</button>
+        </form>
+      </div>
+    </div>
+    <!-- end start game  -->
+    <!-- winning form  -->
+    <div class="overlay winning">
+      <div class="content">
+        <div class="play-again">
+          <form action="">
+            <div class="winner-name">
+              <h3>congratulations <span>Monner A. Mizyed</span></h3>
+              you have just won the Game in
+              <span class="game-mode easy">Easy </span> mode!
+            </div>
+            <div class="top-hit">
+              you have done <span>0</span> right hits in a raw that's
+              <span>Amazing</span>.
+            </div>
+            <div class="time-req">
+              It took you <span>0</span> seconds to win.
+            </div>
+            <div class="wrong-hits">
+              total wrong hits: <span class="hits">0</span>.
+            </div>
+
+            Do you want to try again diffrent mode?
+            <div class="fo dif">
+              <label for="diff">Game Mode</label>
+              <select name="dif" id="diff">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+                <option value="impossible">Impossible</option>
+              </select>
+            </div>
+            <div class="fo sound">
+              <input type="checkbox" name="" id="sound1" checked />
+              <label for="sound1"> Use sound effects</label>
+            </div>
+            <button class="button" role="button" type="submit">
+              let's Play
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- losing form  -->
+    <div class="overlay losing">
+      <div class="content">
+        <div class="play-again">
+          <form action="">
+            <div class="loser">
+              <h3>Sorry <span>Monner A. Mizyed</span></h3>
+              But you have lost.
+            </div>
+            Do you want to try again diffrent Mode?
+            <div class="fo dif">
+              <label for="diff-lose">Game Mode</label>
+              <select name="dif" id="diff-lose">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+                <option value="impossible">Impossible</option>
+              </select>
+            </div>
+            <div class="fo sound">
+              <input type="checkbox" name="" id="sound3" checked />
+              <label for="sound3"> Use sound effects</label>
+            </div>
+            <button class="button" role="button" type="submit">
+              let's Play
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="bar">
+        <div class="name"><span>Unknown</span></div>
+        <div class="tries">Wrong Tries: <span>0</span></div>
+      </div>
+      <div class="timer">
+        <img
+          src="images/stopwatch.svg"
+          alt="stopwatch icon"
+          style="width: 25px"
+        />
+        <span>0</span> seconds left
+      </div>
+      <div class="game">
+        <div class="block" data-block="angular">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/angular.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="angular">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/angular.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="vue">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/vue.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="vue">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/vue.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="bootstrap">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/bootstrap.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="bootstrap">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/bootstrap.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="js">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/js.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="js">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/js.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="github">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/github.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="github">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/github.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="react">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/react.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="react">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/react.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="php">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/php .png" alt="" /></div>
+        </div>
+        <div class="block" data-block="php">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/php .png" alt="" /></div>
+        </div>
+        <div class="block" data-block="html5">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/html5.jpg" alt="" /></div>
+        </div>
+        <div class="block" data-block="html5">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/html5.jpg" alt="" /></div>
+        </div>
+        <div class="block" data-block="tailwind">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/tailwind.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="tailwind">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/tailwind.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="css3">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/css3.png" alt="" /></div>
+        </div>
+        <div class="block" data-block="css3">
+          <div class="face front">?</div>
+          <div class="face back"><img src="images/css3.png" alt="" /></div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div>© 2022 <span>Moneer</span> All rights reserved</div>
+      <div class="contact">
+        <div>WhatsApp:<span>+972598654780</span></div>
+        <div>
+          <a href="mailto:xv.neerbusiness@gmail.com"
+            >xv.neer.business@gmail.com</a
+          >
+        </div>
+      </div>
+    </footer>
+    <audio src="media/attention-bell.wav" id="suc" preload="auto"></audio>
+    <audio src="media/bell.wav" id="suc2" preload="auto"></audio>
+    <audio src="media/losing.wav" id="losing" preload="auto"></audio>
+    <audio src="media/win.wav" id="win" preload="auto"></audio>
+    <audio src="media/failed.wav" id="fail" preload="auto"></audio>
+    <audio src="media/conuntdown.wav" id="imp-cd" preload="auto"></audio>
+
+    <script src="js/main.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+  </body>
+</html>

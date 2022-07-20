@@ -1,0 +1,354 @@
+:root {
+  --main-color: #2196f3;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+.container {
+  padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1250px;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 70px;
+  background-color: var(--main-color);
+}
+/* start overlay  */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(134, 184, 209, 0.822);
+  z-index: 1;
+  transition: z-index 0s, opacity 1s;
+}
+.start {
+  opacity: 0;
+  z-index: -1;
+}
+.content {
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+form span {
+  color: var(--main-color);
+  padding: 10px 0 30px;
+  display: block;
+  font-weight: bold;
+}
+
+form {
+  transform: skew(4deg, -4deg);
+  background-color: white;
+  padding: 20px;
+  width: fit-content;
+  width: -moz-fit-content;
+  border-radius: 3px;
+}
+.fo {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: left;
+  color: #666;
+}
+label {
+  padding: 5px;
+}
+.player-name input {
+  padding: 7px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+.player-name input:focus {
+  outline: none;
+  border-color: orangered;
+}
+select {
+  width: 220px;
+  padding: 5px;
+}
+/* input {
+  all: unset;
+  caret-color: var(--main-color);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #ffffffbd;
+  text-align: left;
+  outline: none;
+  border: 2px solid #ccc;
+}
+input:focus {
+  outline: none;
+  border: 2px solid var(--main-color);
+}
+label {
+  margin: 0 5px;
+  color: white;
+  font-weight: bold;
+} */
+.button {
+  margin: 0 auto;
+  background-color: #2da1ffc8;
+  display: flex;
+  font-family: ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.35rem;
+  position: relative;
+  text-align: center;
+  max-width: 160px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  padding: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 6px;
+  left: 6px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+  transition: all 0.2s;
+}
+
+.button:hover:after {
+  bottom: 3px;
+  left: 3px;
+}
+/* play again  */
+.winning,
+.losing {
+  opacity: 0;
+  z-index: -1;
+  transition: z-index 0s, opacity 1s;
+}
+.hits {
+  color: red;
+}
+
+.show-winning {
+  opacity: 1;
+  z-index: 1;
+}
+.loser {
+  padding: 0px 0 20px;
+}
+.play-again form h3 {
+  text-transform: capitalize;
+}
+.play-again form span {
+  display: inline-block;
+  padding: 15px 0;
+  text-transform: capitalize;
+}
+
+/* start bar sytle  */
+.bar {
+  width: 100%;
+  background-color: #f6f6f6;
+  padding: 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #ccc;
+}
+.bar .name {
+  color: #2196f3;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+.bar .tries {
+  color: red;
+}
+.timer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 0;
+  gap: 10px;
+}
+/* start game style  */
+.game {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 120px);
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 100%;
+}
+
+.game .block {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.game .block .front {
+  background-color: #222;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  color: white;
+}
+.game .block .back {
+  transform: rotatey(180deg);
+  background-color: white;
+  width: 101%;
+  height: 101%;
+}
+.block .face {
+  position: absolute;
+  text-align: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 3px solid var(--main-color);
+}
+
+@media (max-width: 700px) {
+  .game .block {
+    width: 100px;
+    height: 100px;
+  }
+  .container .game {
+    grid-template-columns: repeat(5, 100px);
+  }
+}
+@media (max-width: 550px) {
+  .game .block {
+    width: 83px;
+    height: 83px;
+  }
+  .game .block .front {
+    font-size: 65px;
+  }
+  .container .game {
+    grid-template-columns: repeat(auto-fill, 83px);
+  }
+}
+@media (max-width: 400px) {
+  .game .block {
+    width: 70px;
+    height: 70px;
+  }
+  .game .block .front {
+    font-size: 55px;
+  }
+  .container .game {
+    grid-template-columns: repeat(auto-fill, 70px);
+  }
+}
+@media (max-width: 335px) {
+  .game .block .front {
+    font-size: 50px;
+  }
+  .game .block {
+    width: 60px;
+    height: 60px;
+  }
+  .container .game {
+    grid-template-columns: repeat(auto-fill, 60px);
+  }
+}
+.show {
+  transform: rotateY(180deg);
+}
+.footer {
+  background-color: rgb(61 117 145);
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+.footer span {
+  font-weight: bold;
+}
+.footer .contact {
+  padding: 10px 0 5px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer a {
+  color: white;
+  font-weight: bold;
+}
+audio {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
