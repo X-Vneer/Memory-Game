@@ -164,8 +164,8 @@ function gameMode(dif) {
       countDown(45, false);
       break;
     case "impossible":
-      time = 25;
-      countDown(25, true);
+      time = 30;
+      countDown(30, true);
       break;
   }
 }
@@ -209,7 +209,7 @@ function rightHit(c) {
   }
   // sounds effects
   document.getElementById("suc").play();
-  if (rightHitsConter === 2) {
+  if (rightHitsConter >= 2) {
     document.getElementById("suc2").play();
   }
 }
